@@ -1,0 +1,513 @@
+<!doctype html>
+<html lang="bn">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>BanglaLMS — হোম</title>
+  <meta name="description" content="BanglaLMS — প্রফেশনাল ই-লার্নিং থিম (ডেমো হোমপেজ)">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* small custom styles */
+    .glass { background: rgba(255,255,255,0.6); backdrop-filter: blur(6px); }
+    .card-hover:hover { transform: translateY(-8px); box-shadow: 0 12px 30px rgba(2,6,23,0.08); }
+    .hero-bg { background-image: linear-gradient(90deg, rgba(99,102,241,0.12), rgba(14,165,233,0.06)), url('https://images.unsplash.com/photo-1584697964195-7f4f3b8f4a6f?q=80&w=1600&auto=format&fit=crop&ixlib=rb-4.0.3&s='); background-size: cover; background-position: center; }
+    .hero-overlay { background: linear-gradient(180deg, rgba(15,23,42,0.06), rgba(255,255,255,0.7)); }
+  </style>
+</head>
+<body class="antialiased text-slate-800 bg-slate-50">
+
+<!-- NAVBAR -->
+<header class="fixed w-full z-50 top-0 left-0">
+  <div class="backdrop-blur bg-white/60 border-b">
+    <div class="container mx-auto px-4 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <a href="#" class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-md bg-gradient-to-tr from-indigo-600 to-sky-500 text-white flex items-center justify-center font-extrabold">BL</div>
+          <div class="hidden sm:block">
+            <div class="text-lg font-semibold">Bangla<span class="text-indigo-600">LMS</span></div>
+            <div class="text-xs text-slate-500">Professional E‑Learning Theme</div>
+          </div>
+        </a>
+
+        <nav class="hidden md:flex items-center gap-6 text-sm">
+          <a href="#features" class="hover:text-indigo-600">ফিচার</a>
+          <a href="#courses" class="hover:text-indigo-600">কোর্স</a>
+          <a href="#stats" class="hover:text-indigo-600">স্ট্যাটস</a>
+          <a href="#testimonials" class="hover:text-indigo-600">রিভিউ</a>
+          <a href="#pricing" class="hover:text-indigo-600">প্যাকেজ</a>
+          <a href="dashboard.html" class="px-3 py-2 rounded-md bg-indigo-600 text-white">ড্যাশবোর্ড</a>
+        </nav>
+
+        <div class="flex items-center gap-3">
+          <a href="login.html" class="text-sm px-3 py-2">লগইন</a>
+          <a href="register.html" class="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-md bg-indigo-600 text-white">রেজিস্টার</a>
+          <button id="mobileBtn" class="md:hidden p-2 rounded bg-white shadow">☰</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- mobile menu -->
+  <div id="mobileMenu" class="md:hidden bg-white/95 border-b hidden">
+    <div class="px-4 pt-3 pb-4 space-y-2">
+      <a href="#features" class="block">ফিচার</a>
+      <a href="#courses" class="block">কোর্স</a>
+      <a href="#pricing" class="block">প্যাকেজ</a>
+      <a href="login.html" class="block">লগইন</a>
+    </div>
+  </div>
+</header>
+
+<main class="mt-20">
+  <!-- HERO -->
+  <section class="hero-bg hero-overlay py-24">
+    <div class="container mx-auto px-4 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+        <div>
+          <div class="max-w-xl">
+            <h1 class="text-4xl md:text-5xl font-extrabold leading-tight text-slate-900">আপনার কোর্সকে প্রফেশনালভাবে সাজান — বিক্রি করুন ও বড় করুন</h1>
+            <p class="mt-4 text-lg text-slate-700">BanglaLMS দিয়ে সহজে কোর্স বানান, স্টুডেন্ট ট্র্যাক করুন, পেমেন্ট গৃহীত করুন এবং প্রফেশনাল কন্টেন্ট ডেলিভারি দিন—সব বাংলায়।</p>
+
+            <div class="mt-6 flex flex-wrap gap-3">
+              <a href="#pricing" class="inline-flex items-center gap-2 px-6 py-3 rounded-md bg-indigo-600 text-white shadow hover:scale-[1.02] transition">শুরু করুন</a>
+              <a href="#demo" class="inline-flex items-center gap-2 px-6 py-3 rounded-md border bg-white">লাইভ ডেমো</a>
+            </div>
+
+            <div class="mt-6 flex items-center gap-4 text-sm text-slate-600">
+              <div class="flex items-center gap-2"> <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-indigo-600" viewBox="0 0 20 20" fill="currentColor"><path d="M2 11a1 1 0 011-1h1v4H3a1 1 0 01-1-1v-2z"/><path fill-rule="evenodd" d="M5 3a2 2 0 00-2 2v1h14V5a2 2 0 00-2-2H5zM3 8v2a2 2 0 002 2h10a2 2 0 002-2V8H3z" clip-rule="evenodd"/></svg> মোবাইল-ফ্রেন্ডলি</div>
+              <div class="flex items-center gap-2"> <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-indigo-600" viewBox="0 0 24 24" fill="currentColor"><path d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V7H3z"/></svg> bKash/Nagad ইন্টিগ্রেশন</div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="bg-white rounded-2xl shadow-xl p-6 border">
+            <div class="flex items-center justify-between mb-4">
+              <div>
+                <div class="text-sm text-slate-500">Featured</div>
+                <div class="font-semibold">পূর্ণ স্ট্যাক ওয়েব ডেভেলপমেন্ট</div>
+              </div>
+              <div class="text-indigo-600 font-bold">৳ ২২০০</div>
+            </div>
+            <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=" alt="course" class="w-full h-44 object-cover rounded-lg mb-4" />
+            <p class="text-sm text-slate-600">২৫ মডিউল, প্রজেক্ট-ভিত্তিক। লাইভ সেশন ও কুইজ সহ।</p>
+            <div class="mt-4 flex gap-3">
+              <button class="px-4 py-2 rounded-md bg-indigo-600 text-white">এনরোল করুন</button>
+              <button id="previewBtn" class="px-4 py-2 rounded-md border">প্রিভিউ দেখুন</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section id="features" class="py-16">
+    <div class="container mx-auto px-4 lg:px-8">
+      <h2 class="text-3xl font-bold mb-6">মুখ্য ফিচার</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="p-6 bg-white rounded-xl shadow card-hover">
+          <div class="text-indigo-600 text-2xl mb-3">🎓</div>
+          <h4 class="font-semibold mb-2">স্টুডেন্ট ড্যাশবোর্ড</h4>
+          <p class="text-sm text-slate-600">প্রগ্রেস, কুইজ ফলাফল, সার্টিফিকেট একসাথে দেখা যায়।</p>
+        </div>
+        <div class="p-6 bg-white rounded-xl shadow card-hover">
+          <div class="text-indigo-600 text-2xl mb-3">💳</div>
+          <h4 class="font-semibold mb-2">পেমেন্ট ইন্টিগ্রেশন</h4>
+          <p class="text-sm text-slate-600">bKash/Nagad/Bank/Stripe/PayPal সমর্থিত।</p>
+        </div>
+        <div class="p-6 bg-white rounded-xl shadow card-hover">
+          <div class="text-indigo-600 text-2xl mb-3">📺</div>
+          <h4 class="font-semibold mb-2">ভিডিও ও লাইভ ক্লাস</h4>
+          <p class="text-sm text-slate-600">Vimeo/YouTube/Zoom ইন্টিগ্রেশন সহ।</p>
+        </div>
+        <div class="p-6 bg-white rounded-xl shadow card-hover">
+          <div class="text-indigo-600 text-2xl mb-3">🧾</div>
+          <h4 class="font-semibold mb-2">কুইজ ও সার্টিফিকেট</h4>
+          <p class="text-sm text-slate-600">কোর্স সম্পন্ন হলে অটোমেটিক PDF সার্টিফিকেট জেনারেট।</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COURSES GRID -->
+  <section id="courses" class="py-16 bg-slate-50">
+    <div class="container mx-auto px-4 lg:px-8">
+      <div class="flex items-center justify-between mb-6">
+        <h2 class="text-3xl font-bold">পপুলার কোর্স</h2>
+        <div class="flex items-center gap-3">
+          <button id="show12" class="px-3 py-2 rounded-md border">১২ টি দেখাও</button>
+          <a href="courses.html" class="px-3 py-2 rounded-md bg-indigo-600 text-white">সব কোর্স</a>
+        </div>
+      </div>
+
+      <div id="courseGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- 6 demo cards (images from Unsplash) -->
+        <!-- Card 1 -->
+        <article class="bg-white rounded-2xl overflow-hidden shadow hover:shadow-lg transition card-hover" data-title="পূর্ণ স্ট্যাক ওয়েব ডেভেলপমেন্ট" data-price="৳ ২২০০" data-desc="২৫ মডিউল, প্রজেক্ট-ভিত্তিক কোর্স।">
+          <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=" alt="course" class="w-full h-44 object-cover">
+          <div class="p-5">
+            <h3 class="font-semibold">পূর্ণ স্ট্যাক ওয়েব ডেভেলপমেন্ট</h3>
+            <p class="text-sm text-slate-500 mb-3">২৫ মডিউল • প্রজেক্ট ভিত্তিক</p>
+            <div class="flex items-center justify-between">
+              <div class="text-indigo-600 font-bold">৳ ২২০০</div>
+              <button class="viewBtn px-3 py-2 border rounded">বিস্তারিত</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="bg-white rounded-2xl overflow-hidden shadow hover:shadow-lg transition card-hover" data-title="আরবি অনুশীলন" data-price="৳ ৮০০" data-desc="১২ ক্লাস, লাইভ সেশন সহ">
+          <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=" alt="course" class="w-full h-44 object-cover">
+          <div class="p-5">
+            <h3 class="font-semibold">আরবি অনুশীলন</h3>
+            <p class="text-sm text-slate-500 mb-3">১২ ক্লাস • লাইভ সেশন</p>
+            <div class="flex items-center justify-between">
+              <div class="text-indigo-600 font-bold">৳ ৮০০</div>
+              <button class="viewBtn px-3 py-2 border rounded">বিস্তারিত</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="bg-white rounded-2xl overflow-hidden shadow hover:shadow-lg transition card-hover" data-title="গ্রাফিক্স ডিজাইন" data-price="৳ ১২০০" data-desc="প্রজেক্ট ভিত্তিক প্র্যাকটিক্যাল">
+          <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=" alt="course" class="w-full h-44 object-cover">
+          <div class="p-5">
+            <h3 class="font-semibold">গ্রাফিক্স ডিজাইন</h3>
+            <p class="text-sm text-slate-500 mb-3">প্রজেক্ট-ভিত্তিক থিওরি</p>
+            <div class="flex items-center justify-between">
+              <div class="text-indigo-600 font-bold">৳ ১২০০</div>
+              <button class="viewBtn px-3 py-2 border rounded">বিস্তারিত</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 4 -->
+        <article class="bg-white rounded-2xl overflow-hidden shadow hover:shadow-lg transition card-hover" data-title="ডিজিটাল মার্কেটিং" data-price="৳ ১৫০০" data-desc="এসইও, অ্যাডস, সোশ্যাল মিডিয়া স্ট্র্যাটেজি">
+          <img src="https://images.unsplash.com/photo-1492724441997-5dc865305da7?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=" alt="course" class="w-full h-44 object-cover">
+          <div class="p-5">
+            <h3 class="font-semibold">ডিজিটাল মার্কেটিং</h3>
+            <p class="text-sm text-slate-500 mb-3">এসইও, সোশ্যাল মিডিয়া স্ট্র্যাটেজি</p>
+            <div class="flex items-center justify-between">
+              <div class="text-indigo-600 font-bold">৳ ১৫০০</div>
+              <button class="viewBtn px-3 py-2 border rounded">বিস্তারিত</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 5 -->
+        <article class="bg-white rounded-2xl overflow-hidden shadow hover:shadow-lg transition card-hover" data-title="ফ্রন্টএন্ড ডেভেলপমেন্ট" data-price="৳ ১১০০" data-desc="HTML, CSS, JS, Tailwind শেখানো হয়">
+          <img src="https://images.unsplash.com/photo-1526378721401-9f4d6f6b2d1b?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=" alt="course" class="w-full h-44 object-cover">
+          <div class="p-5">
+            <h3 class="font-semibold">ফ্রন্টএন্ড ডেভেলপমেন্ট</h3>
+            <p class="text-sm text-slate-500 mb-3">HTML, CSS, JS, Tailwind</p>
+            <div class="flex items-center justify-between">
+              <div class="text-indigo-600 font-bold">৳ ১১০০</div>
+              <button class="viewBtn px-3 py-2 border rounded">বিস্তারিত</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 6 -->
+        <article class="bg-white rounded-2xl overflow-hidden shadow hover:shadow-lg transition card-hover" data-title="ফটোশপ বেসিক" data-price="৳ ৭০০" data-desc="বেসিক ইমেজ এডিটিং ও কম্পোজিট">
+          <img src="https://images.unsplash.com/photo-1518773553398-650c184e0bb3?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=" alt="course" class="w-full h-44 object-cover">
+          <div class="p-5">
+            <h3 class="font-semibold">ফটোশপ বেসিক</h3>
+            <p class="text-sm text-slate-500 mb-3">ইমেজ এডিটিং • প্র্যাকটিক্যাল</p>
+            <div class="flex items-center justify-between">
+              <div class="text-indigo-600 font-bold">৳ ৭০০</div>
+              <button class="viewBtn px-3 py-2 border rounded">বিস্তারিত</button>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- hidden area for 12 cards (will be toggled) -->
+      <div id="moreCourses" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-6 hidden">
+        <!-- duplicate of six cards but with different images/titles (for demo) -->
+        <!-- ... (for brevity we repeat similar structure) -->
+      </div>
+
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section id="stats" class="py-12">
+    <div class="container mx-auto px-4 lg:px-8">
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 text-center">
+        <div class="bg-white p-6 rounded-xl shadow">
+          <div class="text-3xl font-bold" data-target="12480">0</div>
+          <div class="text-sm text-slate-500">স্টুডেন্ট</div>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow">
+          <div class="text-3xl font-bold" data-target="220">0</div>
+          <div class="text-sm text-slate-500">ইনস্ট্রাক্টর</div>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow">
+          <div class="text-3xl font-bold" data-target="128">0</div>
+          <div class="text-sm text-slate-500">কোর্স</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section id="testimonials" class="py-16 bg-slate-50">
+    <div class="container mx-auto px-4 lg:px-8">
+      <h2 class="text-3xl font-bold mb-6">কী বলছেন ছাত্ররা</h2>
+      <div class="relative">
+        <div id="slides" class="overflow-hidden">
+          <div class="flex gap-6 transition-transform duration-500" style="transform: translateX(0%);">
+            <blockquote class="min-w-full bg-white p-6 rounded-xl shadow">
+              <p class="text-slate-700 mb-3">"কোর্সটি পছন্দ হয়েছে — প্রতিটি লেসন প্র্যাকটিক্যাল ও পরিষ্কার ব্যাখ্যা ছিল।"</p>
+              <div class="flex items-center gap-3">
+                <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=200&auto=format&fit=crop&ixlib=rb-4.0.3&s=" class="w-10 h-10 rounded-full object-cover">
+                <div>
+                  <div class="font-semibold">সুমি রহমান</div>
+                  <div class="text-xs text-slate-500">ফ্রন্টএন্ড স্টুডেন্ট</div>
+                </div>
+              </div>
+            </blockquote>
+
+            <blockquote class="min-w-full bg-white p-6 rounded-xl shadow">
+              <p class="text-slate-700 mb-3">"লাইভ সেশন ও রেকর্ডিং — সময়ের সাথে মিল রেখে শিখতে সুবিধা হয়েছে।"</p>
+              <div class="flex items-center gap-3">
+                <img src="https://images.unsplash.com/photo-1545996124-8d7a3b99a0d3?q=80&w=200&auto=format&fit=crop&ixlib=rb-4.0.3&s=" class="w-10 h-10 rounded-full object-cover">
+                <div>
+                  <div class="font-semibold">রুবায়েত</div>
+                  <div class="text-xs text-slate-500">ডিজাইন স্টুডেন্ট</div>
+                </div>
+              </div>
+            </blockquote>
+
+            <blockquote class="min-w-full bg-white p-6 rounded-xl shadow">
+              <p class="text-slate-700 mb-3">"কোর্সে দেওয়া অ্যাসাইনমেন্টগুলো কাজে লেগেছে — চাকরিতে সহায়তা পেয়েছি।"</p>
+              <div class="flex items-center gap-3">
+                <img src="https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?q=80&w=200&auto=format&fit=crop&ixlib=rb-4.0.3&s=" class="w-10 h-10 rounded-full object-cover">
+                <div>
+                  <div class="font-semibold">ঊর্মি আখতার</div>
+                  <div class="text-xs text-slate-500">ফ্রিল্যান্সার</div>
+                </div>
+              </div>
+            </blockquote>
+
+          </div>
+        </div>
+        <div class="flex gap-3 justify-center mt-6">
+          <button id="prev" class="px-3 py-2 rounded bg-white shadow">‹</button>
+          <button id="next" class="px-3 py-2 rounded bg-white shadow">›</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOG -->
+  <section class="py-16">
+    <div class="container mx-auto px-4 lg:px-8">
+      <h2 class="text-3xl font-bold mb-6">সর্বশেষ ব্লগ</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <article class="bg-white rounded-xl overflow-hidden shadow">
+          <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=" class="w-full h-44 object-cover">
+          <div class="p-5">
+            <h3 class="font-semibold mb-2">কীভাবে অনলাইন কোর্স শুরু করবেন</h3>
+            <p class="text-sm text-slate-500 mb-3">একটি সহজ গাইড — কন্টেন্ট প্ল্যানিং থেকে মার্কেটিং পর্যন্ত।</p>
+            <a href="#" class="text-indigo-600 text-sm">আরো পড়ুন →</a>
+          </div>
+        </article>
+
+        <article class="bg-white rounded-xl overflow-hidden shadow">
+          <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=" class="w-full h-44 object-cover">
+          <div class="p-5">
+            <h3 class="font-semibold mb-2">ভিডিও রেকর্ডিং টিপস</h3>
+            <p class="text-sm text-slate-500 mb-3">কম বাজেটেও প্রফেশনাল ভিডিও কিভাবে করবেন।</p>
+            <a href="#" class="text-indigo-600 text-sm">আরো পড়ুন →</a>
+          </div>
+        </article>
+
+        <article class="bg-white rounded-xl overflow-hidden shadow">
+          <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=" class="w-full h-44 object-cover">
+          <div class="p-5">
+            <h3 class="font-semibold mb-2">কোর্স প্রাইসিং গাইড</h3>
+            <p class="text-sm text-slate-500 mb-3">লোকাল মার্কেটে সঠিক মূল্য নির্ধারণের টিপস।</p>
+            <a href="#" class="text-indigo-600 text-sm">আরো পড়ুন →</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section id="pricing" class="py-16 bg-slate-50">
+    <div class="container mx-auto px-4 lg:px-8">
+      <h2 class="text-3xl font-bold mb-6">প্যাকেজ</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="bg-white p-6 rounded-xl shadow text-center">
+          <div class="text-sm text-slate-500 mb-2">বেসিক</div>
+          <div class="text-3xl font-bold my-4">৳ ৮,০০০</div>
+          <ul class="text-sm text-slate-600 space-y-2 mb-4">
+            <li>১ কোর্স সেটআপ</li>
+            <li>পেমেন্ট কনফিগারেশন</li>
+            <li>১ মাস সাপোর্ট</li>
+          </ul>
+          <a href="#contact" class="inline-block px-4 py-2 rounded-md bg-indigo-600 text-white">অর্ডার</a>
+        </div>
+
+        <div class="bg-white p-6 rounded-xl shadow-lg border-2 border-indigo-600 text-center">
+          <div class="text-sm text-slate-500 mb-2">প্রো</div>
+          <div class="text-3xl font-bold my-4">৳ ১৯,০০০</div>
+          <ul class="text-sm text-slate-600 space-y-2 mb-4">
+            <li>৫ কোর্স পর্যন্ত</li>
+            <li>লাইভ ক্লাস ইন্টিগ্রেশন</li>
+            <li>৬ মাস সাপোর্ট</li>
+          </ul>
+          <a href="#contact" class="inline-block px-4 py-2 rounded-md bg-indigo-600 text-white">অর্ডার</a>
+        </div>
+
+        <div class="bg-white p-6 rounded-xl shadow text-center">
+          <div class="text-sm text-slate-500 mb-2">এন্টারপ্রাইজ</div>
+          <div class="text-3xl font-bold my-4">কাস্টম প্রাইস</div>
+          <ul class="text-sm text-slate-600 space-y-2 mb-4">
+            <li>API ইন্টেগ্রেশন</li>
+            <li>অন-সাইট ট্রেনিং</li>
+            <li>১ বছর সাপোর্ট</li>
+          </ul>
+          <a href="#contact" class="inline-block px-4 py-2 rounded-md bg-indigo-600 text-white">যোগাযোগ</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-12 bg-indigo-600 text-white">
+    <div class="container mx-auto px-4 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
+      <div>
+        <h3 class="text-xl font-semibold">আপনি কি প্রফেশনাল e‑learning প্ল্যাটফর্ম চান?</h3>
+        <p class="text-sm text-indigo-100">আমি থিম বানিয়ে দেব — ইন্সটল, কনফিগার ও কাস্টমাইজ করব।</p>
+      </div>
+      <div>
+        <a href="#contact" class="px-5 py-3 rounded-md bg-yellow-400 text-slate-900 font-semibold">এখনই যোগাযোগ করুন</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="py-16 bg-white">
+    <div class="container mx-auto px-4 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div>
+          <h3 class="text-2xl font-bold mb-4">যোগাযোগ করুন</h3>
+          <p class="text-sm text-slate-600 mb-4">লাইভ ডেমো, থিম কাস্টমাইজেশন বা অর্ডারের জন্য নিচের ফর্ম পূরণ করুন।</p>
+          <div class="space-y-3 text-sm text-slate-600">
+            <div>📍 ঠিকানা: Dhaka, Bangladesh</div>
+            <div>✉️ ইমেইল: you@example.com</div>
+            <div>📱 WhatsApp: +8801XXXXXXXXX</div>
+          </div>
+        </div>
+        <form id="contactForm" class="bg-slate-50 p-6 rounded-xl">
+          <div class="grid grid-cols-1 gap-4">
+            <input required name="name" placeholder="আপনার নাম" class="p-3 rounded border" />
+            <input required name="email" placeholder="ইমেইল" class="p-3 rounded border" />
+            <input name="phone" placeholder="ফোন (ঐচ্ছিক)" class="p-3 rounded border" />
+            <textarea name="message" rows="4" placeholder="মেসেজ" class="p-3 rounded border"></textarea>
+            <div class="flex items-center justify-between">
+              <button type="submit" class="px-4 py-2 rounded-md bg-indigo-600 text-white">পাঠান</button>
+              <div id="formMsg" class="text-sm text-green-600"></div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="py-8 bg-slate-100">
+    <div class="container mx-auto px-4 lg:px-8 text-sm text-slate-700">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+        <div>© ২০২৫ BanglaLMS — All rights reserved</div>
+        <div class="flex items-center gap-3">
+          <a href="#" class="hover:text-indigo-600">Privacy</a>
+          <a href="#" class="hover:text-indigo-600">Terms</a>
+          <a href="#" class="hover:text-indigo-600">Contact</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</main>
+
+<script>
+  // Mobile menu toggle
+  const mobileBtn = document.getElementById('mobileBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  mobileBtn && mobileBtn.addEventListener('click', ()=> mobileMenu.classList.toggle('hidden'));
+
+  // Course detail modal (simple in-page modal)
+  const viewBtns = document.querySelectorAll('.viewBtn');
+  viewBtns.forEach(btn => btn.addEventListener('click', (e)=> openCourseModal(e)));
+
+  function openCourseModal(e){
+    const card = e.target.closest('article');
+    const title = card.getAttribute('data-title') || card.querySelector('h3').innerText;
+    const price = card.getAttribute('data-price') || '';
+    const desc = card.getAttribute('data-desc') || '';
+    const modal = createModal(title, price, desc);
+    document.body.appendChild(modal);
+    setTimeout(()=> modal.classList.add('opacity-100'), 10);
+  }
+
+  function createModal(title, price, desc){
+    const overlay = document.createElement('div');
+    overlay.className = 'fixed inset-0 bg-black/40 flex items-center justify-center z-50 opacity-0 transition-opacity';
+    overlay.innerHTML = `\n      <div class="bg-white rounded-xl max-w-2xl w-full p-6">\n        <div class=\"flex items-start justify-between gap-4\">\n          <div>\n            <h3 class=\"text-xl font-semibold\">${title}</h3>\n            <div class=\"text-sm text-slate-600 mt-2\">${desc}</div>\n            <div class=\"mt-4 text-indigo-600 font-bold\">${price}</div>\n          </div>\n          <div><button id=\"closeModal\" class=\"px-3 py-2 rounded border\">Close</button></div>\n        </div>\n        <div class=\"mt-4\">\n          <a href=\"login.html\" class=\"inline-block px-4 py-2 rounded bg-indigo-600 text-white\">এনরোল করতে লগইন করুন</a>\n        </div>\n      </div>\n    `;
+    overlay.addEventListener('click', (ev)=>{ if(ev.target === overlay) closeModal(overlay); });
+    overlay.querySelector('#closeModal').addEventListener('click', ()=> closeModal(overlay));
+    return overlay;
+  }
+  function closeModal(node){ node.classList.remove('opacity-100'); setTimeout(()=> node.remove(), 200); }
+
+  // Show 12 courses toggle
+  const show12 = document.getElementById('show12');
+  const more = document.getElementById('moreCourses');
+  show12.addEventListener('click', ()=> { more.classList.toggle('hidden'); show12.innerText = more.classList.contains('hidden') ? '১২ টি দেখাও' : 'কম দেখাও'; });
+
+  // Testimonials carousel simple
+  const slides = document.querySelector('#slides > div');
+  const total = slides ? slides.children.length : 0;
+  let idx = 0;
+  document.getElementById('next').addEventListener('click', ()=> { idx = (idx+1)%total; slides.style.transform = `translateX(-${idx*100}%)`; });
+  document.getElementById('prev').addEventListener('click', ()=> { idx = (idx-1+total)%total; slides.style.transform = `translateX(-${idx*100}%)`; });
+  setInterval(()=> { idx = (idx+1)%total; slides.style.transform = `translateX(-${idx*100}%)`; }, 6000);
+
+  // Animated counters
+  const counters = document.querySelectorAll('[data-target]');
+  const animateCounters = ()=>{
+    counters.forEach(el=>{
+      const target = +el.getAttribute('data-target');
+      const step = Math.ceil(target/120);
+      let cur = 0;
+      const t = setInterval(()=>{
+        cur += step;
+        if(cur >= target){ el.innerText = target.toLocaleString('en-US'); clearInterval(t); }
+        else el.innerText = cur.toLocaleString('en-US');
+      },12);
+    });
+  };
+  // trigger when stats in view
+  const statsSection = document.getElementById('stats');
+  const obs = new IntersectionObserver((entries)=>{ if(entries[0].isIntersecting){ animateCounters(); obs.disconnect(); } }, {threshold:0.4});
+  statsSection && obs.observe(statsSection);
+
+  // contact form demo behavior
+  const contactForm = document.getElementById('contactForm');
+  contactForm && contactForm.addEventListener('submit', (e)=>{ e.preventDefault(); document.getElementById('formMsg').innerText = 'ধন্যবাদ — মেসেজ পাঠানো হয়েছে.'; contactForm.reset(); setTimeout(()=> document.getElementById('formMsg').innerText = '', 4000); });
+
+  // preview button demo
+  document.getElementById('previewBtn').addEventListener('click', ()=> alert('প্রিভিউ ডেমো — থিমে কাস্টম প্রিভিউ পেজ থাকবে'));
+
+  // smooth scroll for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(a=> a.addEventListener('click', function(e){ e.preventDefault(); const t = document.querySelector(this.getAttribute('href')); if(t) t.scrollIntoView({behavior:'smooth', block:'start'}); }));
+</script>
+
+</body>
+</html>
