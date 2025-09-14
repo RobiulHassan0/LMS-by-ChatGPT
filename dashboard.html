@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>স্টুডেন্ট ড্যাশবোর্ড | BanglaLMS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#4f46e5',
+                    },
+                    keyframes: {
+                        bounceOnce: {
+                            '0%, 100%': {
+                                transform: 'translateY(0)'
+                            },
+                            '50%': {
+                                transform: 'translateY(-10px)'
+                            },
+                        },
+                    },
+                    animation: {
+                        bounceOnce: 'bounceOnce 1s ease-in-out',
+                    },
+                },
+            },
+        };
+    </script>
+</head>
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-sans transition-colors duration-300">
+
+    <header class="bg-white dark:bg-gray-800 shadow sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-primary">BanglaLMS</h1>
+            <div class="flex items-center space-x-4">
+                <span class="text-sm text-gray-600 dark:text-gray-400">👋 স্বাগতম, Rakib</span>
+                <img src="https://i.pravatar.cc/40" class="w-10 h-10 rounded-full border border-gray-300 dark:border-gray-700" />
+                <button onclick="toggleTheme()" class="bg-primary text-white px-3 py-1 rounded">🌙/☀️</button>
+            </div>
+        </div>
+    </header>
+
+    <div id="toast" class="fixed top-5 right-5 hidden bg-green-500 text-white px-4 py-2 rounded shadow-lg animate-bounceOnce">
+        📢 আপনার লাইভ ক্লাস আজ রাত ৮টায়!
+    </div>
+
+    <main class="container mx-auto px-6 py-10 grid grid-cols-1 lg:grid-cols-4 gap-8">
+
+        <aside class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 lg:col-span-1 space-y-4">
+            <nav class="space-y-2">
+                <a href="#" class="block px-4 py-2 rounded-md hover:bg-indigo-50 dark:hover:bg-gray-700 font-semibold text-primary bg-indigo-100 dark:bg-gray-700">📚 আমার কোর্স</a>
+                <a href="#" class="block px-4 py-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700">📈 কোর্স প্রোগ্রেস</a>
+                <a href="#" class="block px-4 py-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700">📄 সার্টিফিকেট</a>
+                <a href="#" class="block px-4 py-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700">💳 পেমেন্ট</a>
+                <a href="#" class="block px-4 py-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700">⚙️ সেটিংস</a>
+            </nav>
+        </aside>
+
+        <section class="lg:col-span-3 space-y-8">
+
+            <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow">
+                <h2 class="text-xl font-bold mb-4">🎓 এনরোল্ড কোর্সসমূহ</h2>
+                <div id="courses" class="grid md:grid-cols-2 gap-6">
+                    </div>
+            </div>
+
+            <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow">
+                <h2 class="text-xl font-semibold mb-4">📝 কুইজ রেজাল্ট</h2>
+                <ul id="quiz-results" class="list-disc pl-5 space-y-1 text-gray-700 dark:text-gray-300">
+                    </ul>
+            </div>
+
+            <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow">
+                <h2 class="text-xl font-bold mb-4">📄 সার্টিফিকেট</h2>
+                <ul id="certificates" class="list-disc pl-5 space-y-2 text-gray-700 dark:text-gray-300">
+                    </ul>
+            </div>
+
+            <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow">
+                <h2 class="text-xl font-semibold mb-2">📅 পরবর্তী লাইভ ক্লাস</h2>
+                <div id="live-classes" class="space-y-3">
+                    </div>
+            </div>
+
+            <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow">
+                <h2 class="text-xl font-semibold mb-4">🕓 লার্নিং হিস্টোরি</h2>
+                <ul id="history" class="pl-4 border-l-2 border-primary space-y-3">
+                    </ul>
+            </div>
+
+            <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow">
+                <h2 class="text-xl font-bold mb-4">💳 পেমেন্ট হিস্টোরি</h2>
+                <table class="w-full text-left border-collapse">
+                    <thead>
+                        <tr class="text-gray-600 dark:text-gray-400 border-b">
+                            <th class="py-2">কোর্স</th>
+                            <th class="py-2">তারিখ</th>
+                            <th class="py-2">অ্যামাউন্ট</th>
+                            <th class="py-2">স্টেটাস</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-sm">
+                        <tr class="border-b hover:bg-gray-50 dark:hover:bg-gray-700">
+                            <td class="py-2">ফুল স্ট্যাক</td>
+                            <td class="py-2">১২-সেপ্টে-২০২৫</td>
+                            <td class="py-2">৳২২০০</td>
+                            <td class="py-2 text-green-600 font-medium">Paid</td>
+                        </tr>
+                        <tr class="border-b hover:bg-gray-50 dark:hover:bg-gray-700">
+                            <td class="py-2">React JS</td>
+                            <td class="py-2">১-সেপ্টে-২০২৫</td>
+                            <td class="py-2">৳১৮০০</td>
+                            <td class="py-2 text-green-600 font-medium">Paid</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </section>
+    </main>
+
+    <script src="dashboard.js"></script>
+</body>
+</html>
