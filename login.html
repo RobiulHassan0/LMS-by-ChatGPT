@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>লগইন করুন | BanglaLMS</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .fade-in {
+      animation: fadeIn 1s ease-in-out forwards;
+    }
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(-20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-br from-indigo-500 to-purple-600 min-h-screen flex items-center justify-center font-sans">
+
+  <div class="bg-white shadow-lg rounded-lg p-8 max-w-md w-full fade-in">
+    <h2 class="text-2xl font-bold text-center text-indigo-600 mb-6">🎓 লগইন করুন</h2>
+
+    <form onsubmit="handleLogin(event)" class="space-y-5">
+      <div>
+        <label class="block text-sm font-medium text-gray-700">📧 ইমেইল</label>
+        <input type="email" required class="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+      </div>
+      <div>
+        <label class="block text-sm font-medium text-gray-700">🔐 পাসওয়ার্ড</label>
+        <input type="password" required class="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+      </div>
+
+      <button type="submit" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white py-2 rounded transition duration-300">
+        🔓 লগইন
+      </button>
+    </form>
+
+    <p class="text-sm text-center text-gray-600 mt-4">
+      অ্যাকাউন্ট নেই? <a href="register.html" class="text-indigo-500 hover:underline">রেজিস্ট্রেশন করুন</a>
+    </p>
+  </div>
+</body>
+</html>
