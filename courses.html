@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="bn">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Courses — BanglaLMS</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* small tweaks */
+    .card-img {
+      height: 200px;
+      width: 100%;
+      object-fit: cover;
+      display: block;
+      background: #f3f4f6;
+    }
+    .card {
+      transition: transform .22s ease, box-shadow .22s ease;
+    }
+    .card:hover { transform: translateY(-8px); box-shadow: 0 18px 38px rgba(2,6,23,0.08); }
+    /* make tile heights consistent */
+    .card-body { display:flex; flex-direction:column; min-height: 220px; }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800">
+
+  <header class="py-10 text-center">
+    <h1 class="text-4xl font-extrabold text-indigo-700">আমাদের কোর্সসমূহ</h1>
+    <p class="text-slate-600 mt-2">ছবি, বর্ণনা ও এনরোল বাটনসহ — প্রফেশনাল কার্ড লে-আউট</p>
+  </header>
+
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <!-- Controls -->
+    <div class="flex flex-wrap items-center gap-3 justify-center mb-8">
+      <input id="search" type="search" placeholder="কোর্স সার্চ করুন..." class="px-4 py-2 rounded-lg border w-72 shadow-sm" />
+      <div class="flex gap-2">
+        <button onclick="filterCategory('all')" class="px-4 py-2 rounded-lg bg-indigo-600 text-white">All</button>
+        <button onclick="filterCategory('web')" class="px-4 py-2 rounded-lg bg-white border">Web</button>
+        <button onclick="filterCategory('design')" class="px-4 py-2 rounded-lg bg-white border">Design</button>
+        <button onclick="filterCategory('programming')" class="px-4 py-2 rounded-lg bg-white border">Programming</button>
+      </div>
+    </div>
+
+    <!-- Grid -->
+    <section id="grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+      <!-- JS injects cards here -->
+    </section>
+
+    <!-- Footer CTA -->
+    <section class="text-center py-10">
+      <a href="#" class="inline-block px-6 py-3 bg-yellow-400 rounded-full font-semibold">আরও কোর্স দেখুন</a>
+    </section>
+  </main>
+
+<script>
+  // Data: 12 courses (images from Unsplash). Each img has keywords to help get relevant images.
+  const courses = [
+    {id:1, title:"HTML & CSS Basics", category:"web", img:"https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1600&auto=format&fit=crop", desc:"HTML এবং CSS দিয়ে ওয়েবপেজ তৈরির বেসিক শিখুন।", duration:"4 সপ্তাহ", price:"Free"},
+    {id:2, title:"JavaScript Essentials", category:"programming", img:"https://images.unsplash.com/photo-1587620962725-abab7fe55159?q=80&w=1600&auto=format&fit=crop", desc:"DOM ও ইন্টারঅ্যাকশনের মৌলিক জেনে নিন।", duration:"6 সপ্তাহ", price:"৳2,500"},
+    {id:3, title:"Responsive Web Design", category:"web", img:"https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1600&auto=format&fit=crop", desc:"সব ডিসপ্লেতে সুন্দর দেখাতে শিখুন।", duration:"5 সপ্তাহ", price:"৳1,800"},
+    {id:4, title:"UI/UX Fundamentals", category:"design", img:"https://images.unsplash.com/photo-1505682634904-d7c8d5a3bfc4?q=80&w=1600&auto=format&fit=crop", desc:"ইউজার-ফ্রেন্ডলি ইন্টারফেস ডিজাইন করুন।", duration:"3 সপ্তাহ", price:"৳2,000"},
+    {id:5, title:"Graphic Design Mastery", category:"design", img:"https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=1600&auto=format&fit=crop", desc:"গ্রাফিক্সে প্র্যাকটিক্যাল প্রোজেক্ট করুন।", duration:"8 সপ্তাহ", price:"৳3,500"},
+    {id:6, title:"PHP for Beginners", category:"programming", img:"https://images.unsplash.com/photo-1518779578993-ec3579fee39f?q=80&w=1600&auto=format&fit=crop", desc:"সার্ভার-সাইড লজিক শিখুন PHP দিয়ে।", duration:"6 সপ্তাহ", price:"৳2,800"},
+    {id:7, title:"Python Programming", category:"programming", img:"https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1600&auto=format&fit=crop", desc:"Python দিয়ে প্রোগ্রামিং শুরু করুন।", duration:"7 সপ্তাহ", price:"৳3,000"},
+    {id:8, title:"React Frontend Dev", category:"web", img:"https://images.unsplash.com/photo-1581276879432-15d8b0a6d2f9?q=80&w=1600&auto=format&fit=crop", desc:"React দিয়ে দ্রুত UI বানানো শিখুন।", duration:"6 সপ্তাহ", price:"৳3,200"},
+    {id:9, title:"Database Basics", category:"programming", img:"https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1600&auto=format&fit=crop", desc:"ডাটাবেস ও SQL মূল ধারনা।", duration:"4 সপ্তাহ", price:"৳1,600"},
+    {id:10, title:"Figma UI Design", category:"design", img:"https://images.unsplash.com/photo-1556157382-97eda2d62296?q=80&w=1600&auto=format&fit=crop", desc:"Figma দিয়ে প্রফেশনাল UI ডিজাইন।", duration:"4 সপ্তাহ", price:"৳1,900"},
+    {id:11, title:"WordPress Theme Dev", category:"web", img:"https://images.unsplash.com/photo-1526378721401-9f4d6f6b2d1b?q=80&w=1600&auto=format&fit=crop", desc:"Custom WordPress থিম বানান শিখুন।", duration:"5 সপ্তাহ", price:"৳2,400"},
+    {id:12, title:"Advanced JavaScript", category:"programming", img:"https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1600&auto=format&fit=crop", desc:"Advanced JS concepts ও best practices।", duration:"8 সপ্তাহ", price:"৳3,800"}
+  ];
+
+  const grid = document.getElementById('grid');
+
+  // placeholder if an image fails
+  const placeholder = 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500"><rect width="100%" height="100%" fill="%23f3f4f6"/><text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="%239ca3af" font-size="20">Image not available</text></svg>';
+
+  function cardHTML(c){
+    // Use template literal with img onerror fallback
+    return `
+      <article class="card bg-white rounded-xl overflow-hidden border border-transparent">
+        <div class="w-full h-48 bg-slate-200">
+          <img class="card-img" src="${c.img}" alt="${escapeHtml(c.title)}" onerror="this.onerror=null;this.src='${placeholder}';" />
+        </div>
+        <div class="p-5 card-body">
+          <h3 class="text-lg font-semibold text-slate-800 mb-2">${escapeHtml(c.title)}</h3>
+          <p class="text-sm text-slate-600 mb-3">${escapeHtml(c.desc)}</p>
+          <div class="text-sm text-slate-500 mb-4"><strong>সময়কাল:</strong> ${escapeHtml(c.duration)}</div>
+          <div class="mt-auto flex items-center justify-between gap-4">
+            <div class="text-indigo-600 font-bold">${escapeHtml(c.price)}</div>
+            <div class="flex gap-2">
+              <a href="course-details.html?id=${c.id-1}" class="px-4 py-2 rounded-md border text-sm">Details</a>
+              <button onclick="onEnroll(${c.id})" class="px-4 py-2 rounded-md bg-indigo-600 text-white text-sm">Enroll Now</button>
+            </div>
+          </div>
+        </div>
+      </article>
+    `;
+  }
+
+  function render(list){
+    grid.innerHTML = '';
+    list.forEach(c => {
+      const wrapper = document.createElement('div');
+      wrapper.className = 'p-2';
+      wrapper.innerHTML = cardHTML(c);
+      grid.appendChild(wrapper);
+    });
+  }
+
+  // escape to avoid any injection
+  function escapeHtml(s){ return String(s).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;'); }
+
+  // initial
+  render(courses);
+
+  // search
+  document.getElementById('search').addEventListener('input', (e)=>{
+    const q = e.target.value.trim().toLowerCase();
+    if(!q){ render(courses); return; }
+    const f = courses.filter(c=> c.title.toLowerCase().includes(q) || c.desc.toLowerCase().includes(q));
+    render(f);
+  });
+
+  // filter category
+  function filterCategory(cat){
+    if(cat === 'all'){ render(courses); return; }
+    render(courses.filter(c=> c.category === cat));
+  }
+
+  // enroll behavior: redirect to login if not logged in (demo)
+  function onEnroll(id){
+    // demo check: pretend not logged-in -> redirect to login.html
+    // In real app, check auth and then enroll via API
+    const wants = courses.find(x=> x.id === id);
+    if(!wants) return alert('Course not found');
+    // show confirm + redirect
+    const go = confirm(`'${wants.title}' কোর্সে এনরোল করতে লগইন প্রয়োজন। লগইন করতে চান?`);
+    if(go) window.location.href = 'login.html';
+  }
+</script>
+
+</body>
+</html>
